@@ -1,0 +1,11 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#heading {
+  text-shadow: rgb(105, 105, 241) 1px 0 5px;
+  color: rgb(93, 93, 93);
+}

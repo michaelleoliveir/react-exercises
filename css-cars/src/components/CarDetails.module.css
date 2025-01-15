@@ -1,0 +1,23 @@
+.view {
+    padding: 2rem;
+    border-radius: 2rem;
+    margin: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    line-height: 0.6rem;
+}
+
+.heading {
+    color: blue;
+    font-size: 2rem;
+}
+
+.statusTrue {
+    margin-top: 2rem;
+    color: green;
+}
+
+.statusFalse {
+    margin-top: 2rem;
+    color: red;
+}
