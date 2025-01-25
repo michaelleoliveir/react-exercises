@@ -1,25 +1,29 @@
 import { useState } from "react"
-import { useFetch } from "./useFetch";
 
-export const usePost = (url) => {
-    const [items, error] = useFetch(url)
+export const usePost = (url, fetchData) => {
 
-    const [data, setData] = useState([]);
-    const [method, setMethod] = useState("");
-    const [config, setConfig] = useState(null);
+    const [errorPost, setErrorPost] = useState("");
 
-    const httpConfig = async (data, method) => {
+    const httpConfig = async (newData, method) => {
         if(method === "POST") {
-            setConfig({
-                method, 
-                headers: {
-                    "Content-Type" : "application/json"
-                },
-                body: JSON.stringify(data)
-            })
-        }
+            try {
+                const resp = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newData)
+                });
 
-        setMethod(method)
+                if(!resp.ok) {
+                    setErrorPost("Erro")
+                }
+
+                fetchData();
+            } catch (error) {
+                setErrorPost("Não foi possível cadastrar itens no momento")
+            }
+        }
     };
 
     return {httpConfig}

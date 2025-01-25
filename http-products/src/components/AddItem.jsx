@@ -1,10 +1,8 @@
-import { usePost } from "../hooks/usePost";
-
 import { useState } from "react"
 
 import "./AddItem.css"
 
-const AddItem = () => {
+const AddItem = ({httpConfig}) => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
 
@@ -16,7 +14,7 @@ const AddItem = () => {
             price
         };
 
-        usePost(newItem, "POST");
+        httpConfig(newItem, "POST");
 
         setName("");
         setPrice("")
