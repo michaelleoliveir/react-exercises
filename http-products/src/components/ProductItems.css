@@ -1,0 +1,13 @@
+.item {
+	margin: 5px;
+	text-align: center;
+	font-size: 1.2em;
+    border-radius: 30px;
+    padding: 20px;
+
+    background-color: rgb(76, 22, 96);
+}
+
+p {
+    margin: 1px;
+}
